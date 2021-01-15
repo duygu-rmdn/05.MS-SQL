@@ -1,8 +1,38 @@
-CREATE TABLE DuyguTable
-(
-  Id INT NOT NULL,
-  Email VARCHAR(50) NOT NULL,
-  FirstName VARCHAR(50),
-  LastName VARCHAR(50)
+CREATE DATABASE Minions
+Use Minions
 
+
+CREATE TABLE Minions(
+	Id int PRIMARY KEY,
+	[Name] VARCHAR(30), 
+	Age int 
 )
+
+CREATE TABLE Towns(
+	Id int PRIMARY KEY ,
+	[Name] VARCHAR(50), 
+)
+
+ALTER TABLE Minions
+ADD TownId INT
+
+
+ALTER TABLE Minions
+ADD FOREIGN KEY (TownId) REFERENCES Towns(Id)
+
+
+INSERT INTO Towns(Id, Name) VALUES
+	(1, 'Sofia'),
+	(2, 'Plovdiv'),
+	(3, 'Varna')
+
+INSERT INTO Minions(Id, Name, Age, TownId) VALUES
+(1, 'Kevin', 22, 1),
+(2, 'Bob', 15, 3),
+(3, 'Steward', NULL, 2)
+
+SELECT * FROM Towns
+SELECT * FROM Minions
+
+DELETE FROM Minions
+DROP TABLE Minions

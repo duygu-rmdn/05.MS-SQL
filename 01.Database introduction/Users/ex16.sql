@@ -54,7 +54,8 @@ SELECT FirstName,LastName,JobTitle, Salary
 FROM Employees 
 ORDER BY Salary DESC
 
-/*•	Towns – Name
-•	Departments – Name
-•	Employees – FirstName, LastName, JobTitle, Salary
+UPDATE Employees 
+SET Salary *= 1.1
+SELECT  Salary
+FROM Employees 
 

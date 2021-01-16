@@ -108,3 +108,8 @@ INSERT INTO Occupancies (EmployeeId) VALUES
 (3)
 --SELECT * FROM Occupancies
 
+UPDATE Payments 
+SET TaxRate *=0.97
+SELECT TaxRate FROM Payments
+
+TRUNCATE TABLE Occupancies 

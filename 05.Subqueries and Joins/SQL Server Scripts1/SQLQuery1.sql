@@ -59,3 +59,17 @@ SELECT e.EmployeeID, e.FirstName, e.ManagerID, d.FirstName AS ManagerName
 	JOIN Employees d ON d.EmployeeID = e.ManagerID
 	WHERE e.ManagerID IN (3, 7)
 	ORDER BY e.EmployeeID 
+
+SELECT TOP(50) e.EmployeeID, e.FirstName + ' ' + e.LastName , ee.FirstName + ' ' + ee.LastName, d.Name
+	FROM Employees e
+	JOIN Departments d ON e.DepartmentID = d.DepartmentID
+	JOIN Employees ee ON e.ManagerID = ee.EmployeeID
+	ORDER BY e.EmployeeID
+
+SELECT MIN(k.MinAverageSalary) FROM 
+( 
+SELECT AVG(Salary) AS MinAverageSalary, e.DepartmentID
+	FROM Employees e
+	JOIN Departments d ON e.DepartmentID = d.DepartmentID
+	GROUP BY e.DepartmentID
+)AS k

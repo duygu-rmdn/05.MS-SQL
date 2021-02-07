@@ -73,3 +73,4 @@ SELECT AVG(Salary) AS MinAverageSalary, e.DepartmentID
 	JOIN Departments d ON e.DepartmentID = d.DepartmentID
 	GROUP BY e.DepartmentID
 )AS k
+

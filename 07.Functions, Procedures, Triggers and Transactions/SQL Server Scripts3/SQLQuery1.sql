@@ -64,6 +64,8 @@ END
 
 
 
+
+
 CREATE PROC usp_DeleteEmployeesFromDepartment(@departmentId INT) 
 AS
 ALTER TABLE DEPARTMENTS
